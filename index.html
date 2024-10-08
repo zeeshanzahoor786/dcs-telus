@@ -352,12 +352,9 @@
 
     <script src="script.js"></script>
 <script>
-    // Function to set colors based on the text content
-    function setCellColors() {
-        // Get all table cells
-        const cells = document.querySelectorAll('td');
 
-        // Define color mappings
+    function setCellColors() {
+        const cells = document.querySelectorAll('td');  
         const colorMapping = {
             'Completed': 'lightgreen',
             'COMPLETED': 'lightgreen',
@@ -365,7 +362,7 @@
             'In Progress': 'lightblue',
             'IN PROGRESS': 'lightblue',
             'in progress': 'lightblue',
-            'In Discussion': 'lightpink', // Change to lightcoral for better visibility
+            'In Discussion': 'lightpink',
             'IN DISCUSSION': 'lightpink',
             'in discussion': 'lightpink',
             'Not Needed': 'lightgrey',
@@ -374,16 +371,12 @@
         };
 
         cells.forEach(cell => {
-            // Get the trimmed text content
             const textContent = cell.textContent.trim();
-            // Check if the textContent is in the colorMapping keys
             if (colorMapping[textContent]) {
                 cell.style.backgroundColor = colorMapping[textContent];
             }
         });
     }
-
-    // Run the function on page load
     window.onload = setCellColors;
 </script>
 
