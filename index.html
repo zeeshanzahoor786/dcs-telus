@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Views with Boxes, Table, Navbar, and Logo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://pcw-cdn.softgarden.de/uploads/digitalchargingsolutions/de/widget/header/design/image_3psil5qvdnpj?timestamp=1658156183628&width=170&height=0&resizing_type=fill" alt="Logo">
+        </div>
+        <button class="nav-toggle" id="navToggle">
+            &#9776;
+        </button>
+        <ul class="nav-links" id="navLinks">
+         
+             <li><a href="mailto:zeeshan.zahoor@digitalchargingsolutions.com">Contact admins</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- Toggle Buttons -->
+    <div class="toggle-buttons">
+        <button id="dcsOnlyBtn" class="active">FOR DCS INTERNAL</button>
+        <button id="onboardingStatusBtn" class="active2">ONBOARDING STATUS</button>
+    </div>
+
+    <!-- DCS ONLY View (Boxes) -->
+    <div id="dcsView" class="container">
+        <div class="box" onclick="goToURL('https://jira.digitalchargingsolutions.com/secure/RapidBoard.jspa?rapidView=445&projectKey=INTSUP#')">
+            <img src="images/intsup.png" alt="Image 1">
+            <p>ONBOARD INTSUP</p>
+        </div>
+        <div class="box" onclick="goToURL('https://portal.azure.com/#view/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/~/AppAppsPreview')">
+            <img src="images/zendesk.png"  alt="Image 2">
+            <p>ONBOARD ZENDESK</p>
+        </div>
+        <div class="box" onclick="goToURL('https://jira.digitalchargingsolutions.com/projects/DEVCIC/issues/DEVCIC-1018?filter=allopenissues')">
+            <img src="images/cicx.png"  alt="Image 3">
+            <p>ONBOARD CICX</p>
+        </div>
+        <div class="box" onclick="goToURL('https://jira.digitalchargingsolutions.com/secure/RapidBoard.jspa?rapidView=234&projectKey=DEVCST#')">
+            <img src="images/adyen.png"  alt="Image 4">
+            <p>ONBOARD ADYEN</p>
+        </div>
+        <div class="box" onclick="goToURL('https://jira.digitalchargingsolutions.com/secure/RapidBoard.jspa?rapidView=234&projectKey=DEVCST#')">
+            <img src="images/snowflake.png"  alt="Image 5">
+            <p>ONBOARD SNOWFLAKE</p>
+        </div>
+        <div class="box" onclick="goToURL('https://jira.digitalchargingsolutions.com/projects/SAPSUP/issues/SAPSUP-1902?filter=allopenissues')">
+            <img src="images/sap.png" alt="Image 6">
+            <p>ONBOARD SAP</p>
+        </div>
+    </div>
+
+    <!-- ONBOARDING STATUS View (Table) -->
+    <div id="onboardingView" class="container table-container" style="display: none;">
+        
+		
+		  <div id="onboardingView" class="onboarding-process">
+        <h1>Onboarding Process and Time Period</h1>
+        		<div class="overall">
+                <p><strong>Overall Onboarding Time Period:</strong> Around 2-3 weeks</p>
+        </div>
+        <div class="timeline">
+
+            <div class="timeline-step">
+                <div class="bullet"></div>
+                <div class="step-details">
+                    <h3>Step 1</h3>
+                    <p><strong>Task:</strong> Telus TLs submit onboarding request to Zeeshan (CC Ana, Daniel, Ahmed)</p>
+                    <p><strong>Responsible Person(s):</strong> TELUS TLs</p>
+                    <p><strong>Time Period:</strong> Same day</p>
+                </div>
+            </div>
+            
+            <div class="timeline-step">
+                <div class="bullet"></div>
+                <div class="step-details">
+                    <h3>Step 2</h3>
+                    <p><strong>Task:</strong> Zeeshan forwards request to IT Support team to onboard users in DCS directory with their external emails.</p>
+                    <p><strong>Responsible Person(s):</strong> Zeeshan</p>
+                    <p><strong>Time Period:</strong> 1 day</p>
+                </div>
+            </div>
+
+            <div class="timeline-step">
+                <div class="bullet"></div>
+                <div class="step-details">
+                    <h3>Step 3</h3>
+                    <p><strong>Task:</strong> IT Support adds external requested users in DCS.</p>
+                    <p><strong>Responsible Person(s):</strong> IT Support Team</p>
+                    <p><strong>Time Period:</strong> 2-3 days</p>
+                </div>
+            </div>
+
+            <div class="timeline-step">
+                <div class="bullet"></div>
+                <div class="step-details">
+                    <h3>Step 4</h3>
+                    <p><strong>Task:</strong> Zeeshan adds users to Zendesk and assigns roles, after that users will be able to login in zendesk</p>
+                    <p><strong>Responsible Person(s):</strong> Zeeshan - Zendesk</p>
+                    <p><strong>Time Period:</strong> 1 day</p>
+                </div>
+            </div>
+
+            <div class="timeline-step">
+                <div class="bullet"></div>
+                <div class="step-details">
+                    <h3>Step 5</h3>
+                    <p><strong>Task:</strong> Zeeshan creates tickets to add users to additional tools at once and reports back to Telus TL’s for each tool.</p>
+                    <p><strong>Responsible Person(s):</strong> Zeeshan</p>
+                    <p><strong>Time Period:</strong> 1 day</p>
+                </div>
+            </div>
+            <div class="timeline-substep">
+                <div class="bullet"></div>
+                <div class="step-details">
+                    <p><strong>Tool:</strong> SAP</p>
+                    <p><strong>Responsible Person(s):</strong> SAP Team</p>
+                    <p><strong>Time Period:</strong> 1-2 weeks</p>
+                </div>
+            </div>
+
+            <div class="timeline-substep">
+                <div class="bullet"></div>
+                <div class="step-details">
+                    <p><strong>Tool:</strong> CICX</p>
+                    <p><strong>Responsible Person(s):</strong> CICX Team</p>
+                    <p><strong>Time Period:</strong> 1-2 weeks</p>
+                </div>
+            </div>
+
+            <div class="timeline-substep">
+                <div class="bullet"></div>
+                <div class="step-details">
+                    <p><strong>Tool:</strong> ADYEN</p>
+                    <p><strong>Responsible Person(s):</strong> ADYEN Team</p>
+                    <p><strong>Time Period:</strong> 1-3 days</p>
+                </div>
+            </div>
+
+            <div class="timeline-substep">
+                <div class="bullet"></div>
+                <div class="step-details">
+                    <p><strong>Tool:</strong> Snowflake</p>
+                    <p><strong>Responsible Person(s):</strong> Snowflake Team</p>
+                    <p><strong>Time Period:</strong> 1-3 days</p>
+                </div>
+            </div> 
+            </div>
+			    
+    </div>
+
+		
+		
+		
+		<table>
+            <thead>
+                <tr>
+                 <th ><img src="images/telus.png"  width="39px" height="39px"></th>
+					<th><img src="images/batch.png"  width="39px" height="39px"></th>
+                    <th ><img src="images/intsup.png"  width="39px" height="39px"></th>
+                    <th ><img src="images/zendesk.png"  width="39px" height="39px"></th>
+                    <th ><img src="images/cicx.png"  width="39px" height="39px"></th>
+					<th ><img src="images/adyen.png"  width="39px" height="39px"></th>
+                    <th ><img src="images/snowflake.png"  width="39px" height="39px"></th>
+					 <th ><img src="images/sap.png"  width="39px" height="39px"></th>
+                    <th><img src="images/notes.png"  width="39px" height="39px"></th>
+                </tr>
+            </thead>
+            <tbody>          <td>Fernando Paula</td>
+                    <td>Batch 11</td>
+                    <td>Completed</td>
+                    <td>Completed</td>
+					   <td>Completed</td>
+                    <td>Completed</td>
+                    <td>Completed</td>
+                   <td>Completed</td>
+                    <td>Nill</td>
+                </tr> <tr>  
+				<td>Roberto Radina</td>
+                    <td>Batch 10</td>
+                    <td>Completed</td>
+                    <td>Completed</td>
+					   <td>Completed</td>
+                    <td>Completed</td>
+                    <td>Completed</td>
+                  <td>Completed</td>
+                    <td>Nill</td>
+                </tr> <tr>
+                    <td>Aleksandra Rendevski</td>
+                    <td>Batch 10</td>
+                    <td>Completed</td>
+                    <td>Completed</td>
+					   <td>Completed</td>
+                    <td>Completed</td>
+                    <td>Completed </td>
+                   <td>Completed</td>
+                    <td>Nill</td>
+                </tr> <tr>
+          <td>Blagoy Spanakov</td>
+                    <td>Batch 10</td>
+                    <td>Completed</td>
+                    <td>Completed</td>
+					   <td>Completed</td>
+                    <td>Completed</td>
+                    <td>Completed</td>
+                       <td>Completed</td>
+                    <td>Nill</td>
+                </tr> <tr>
+      <td>Tsveta Hristova</td>
+                    <td>Batch 10</td>
+                    <td>Completed</td>
+                    <td>Completed</td>
+					   <td>Completed</td>
+                    <td>Completed</td>
+                    <td>Completed</td>
+                    <td>Completed</td>
+                    <td>Nill</td>
+                </tr> <tr>
+				  <td>
+				  Diana Spasova</td>
+                    <td>Batch 11</td>
+                    <td>Completed</td>
+                    <td>Completed</td>
+					   <td>Completed</td>
+                    <td>Completed</td>
+                    <td>In Progress</td>
+                       <td>Completed</td>
+                    <td>Nill</td>
+                </tr> <tr>
+        <td>Miroslav Konrad 
+	</td>
+                    <td>Batch 11</td>
+                    <td>Completed</td>
+                    <td>Completed</td>
+					   <td>Completed</td>
+                    <td>Completed</td>
+                    <td>In Progress</td>
+                      <td>Completed</td>
+                    <td>Nill</td>
+                </tr> <tr>
+         <td>Ralitsa Racheva</td>
+                    <td>Batch 11</td>
+                    <td>Completed</td>
+                    <td>Completed</td>
+					   <td>Completed</td>
+                    <td>Completed</td>
+                    <td>In Progress</td>
+                   <td>In Progress</td>
+                    <td>Nill</td>
+                </tr> <tr>
+              <td>Stela Ilieva</td>
+                    <td>Batch 11</td>
+                    <td>Completed</td>
+                    <td>Completed</td>
+					   <td>Completed</td>
+                    <td>Completed</td>
+                    <td>In Progress</td>
+                   <td>In Progress</td>
+                    <td>Nill</td>
+                </tr> <tr>
+            <td>Niclas Bergvall</td>
+                    <td>No Batch</td>
+                    <td>In Progress</td>
+                    <td>In Progress</td>
+					   <td>Not Needed</td>
+                    <td>Not Needed</td>
+                    <td>Not Needed</td>
+                       <td>Not Needed</td>
+                    <td>Nill</td>
+                </tr> <tr>
+                <td>Gabin Wehrlen</td>
+                    <td>Batch 12</td>
+                    <td>In Progress</td>
+                    <td>In Progress</td>
+					   <td>In Progress</td>
+                    <td>In Progress</td>
+                    <td>In Progress</td>
+                       <td>In Progress</td>
+                    <td>Nill</td>
+                </tr> <tr>
+               <td>Ivo Ivanov</td>
+                    <td>Batch 12</td>
+                    <td>In Progress</td>
+                    <td>In Progress</td>
+					   <td>In Progress</td>
+                    <td>In Progress</td>
+                    <td>In Progress</td>
+                       <td>In Progress</td>
+                    <td>Nill</td>
+                </tr> <tr>
+                <td>Devora Chatzidaki</td>
+                    <td>Batch 12</td>
+                    <td>In Progress</td>
+                    <td>In Progress</td>
+					   <td>In Progress</td>
+                    <td>In Progress</td>
+                    <td>In Progress</td>
+                       <td>In Progress</td>
+                    <td>Nill</td>
+                </tr> <tr>
+                    <td>Viktoria Zhelyazkova</td>
+                    <td>Batch 12</td>
+                    <td>In Progress</td>
+                    <td>In Progress</td>
+					   <td>In Progress</td>
+                    <td>In Progress</td>
+                    <td>In Progress</td>
+                       <td>In Progress</td>
+                    <td>Nill</td>
+                </tr> <tr>
+                 <td>Claudia Serafini</td>
+                    <td>Batch 12</td>
+                    <td>In Progress</td>
+                    <td>In Progress</td>
+					   <td>In Progress</td>
+                    <td>In Progress</td>
+                    <td>In Progress</td>
+                       <td>In Progress</td>
+                    <td>Nill</td>
+                </tr> <tr>
+                    <td>maxim maier</td>
+                    <td>Batch 12</td>
+                    <td>In Progress</td>
+                    <td>In Progress</td>
+					   <td>In Progress</td>
+                    <td>In Progress</td>
+                    <td>In Progress</td>
+                       <td>In Progress</td>
+                    <td>Nill</td>
+                  
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- Footer -->
+	
+	<div class="bottom-banner">
+    <a href="https://confluence.digitalchargingsolutions.com/display/CCCS/TELUS+International+Access+Management" class="banner-link">Click here to go to documentation</a>
+</div>
+    <footer>
+	
+        <p>&copy; 2024 Digital Charging Solutions. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+<script>
+    // Function to set colors based on the text content
+    function setCellColors() {
+        // Get all table cells
+        const cells = document.querySelectorAll('td');
+
+        // Define color mappings
+        const colorMapping = {
+            'Completed': 'lightgreen',
+            'COMPLETED': 'lightgreen',
+            'completed': 'lightgreen',
+            'In Progress': 'lightblue',
+            'IN PROGRESS': 'lightblue',
+            'in progress': 'lightblue',
+            'In Discussion': 'lightpink', // Change to lightcoral for better visibility
+            'IN DISCUSSION': 'lightpink',
+            'in discussion': 'lightpink',
+            'Not Needed': 'lightgrey',
+            'NOT NEEDED': 'lightgrey',
+            'not needed': 'lightgrey'
+        };
+
+        cells.forEach(cell => {
+            // Get the trimmed text content
+            const textContent = cell.textContent.trim();
+            // Check if the textContent is in the colorMapping keys
+            if (colorMapping[textContent]) {
+                cell.style.backgroundColor = colorMapping[textContent];
+            }
+        });
+    }
+
+    // Run the function on page load
+    window.onload = setCellColors;
+</script>
+
+	
+</body>
+</html>
