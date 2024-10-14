@@ -30,6 +30,8 @@
 
     <!-- DCS ONLY View (Boxes) -->
     <div id="dcsView" class="container">
+	      <h1>Fetched Data</h1>
+    <div id="output"></div>
         <div class="box" onclick="goToURL('https://jira.digitalchargingsolutions.com/secure/RapidBoard.jspa?rapidView=445&projectKey=INTSUP#')">
             <img src="images/intsup.png" alt="Image 1">
             <p>ONBOARD INTSUP</p>
@@ -380,6 +382,43 @@
     window.onload = setCellColors;
 </script>
 
-	
+    <script>
+        const url = 'https://webhook.site/2309bc00-cfdb-4e79-aa27-3ddb38feb930';
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json(); // Parse the JSON from the response
+            })
+            .then(data => {
+                console.log(data); // Log the JSON data to the console
+                // You can manipulate or display the data in your HTML
+                displayData(data);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error); // Handle any errors
+            });
+
+        // Function to display data in HTML
+        function displayData(data) {
+            const output = document.getElementById('output'); // Ensure you have an element with this ID
+            output.innerHTML = ''; // Clear previous content
+            if (Array.isArray(data)) {
+                data.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'item'; // Add a class for styling
+                    div.innerHTML = `Name: ${item.NAME}, Batch: ${item.BATCH}`;
+                    output.appendChild(div);
+                });
+            } else {
+                const div = document.createElement('div');
+                div.className = 'item'; // Add a class for styling
+                div.innerHTML = `Name: ${data.NAME}, Batch: ${data.BATCH}`; // For non-array data
+                output.appendChild(div);
+            }
+        }
+    </script>	
 </body>
 </html>
